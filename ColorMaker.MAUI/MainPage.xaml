@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColorMaker.MAUI.MainPage">
+
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#22577E</Color>
+        <Color x:Key="Secondary">#FBC252</Color>
+        <Color x:Key="Tertiary">#9E4784</Color>
+    </ContentPage.Resources>
+
+    <Grid x:Name="Container" BackgroundColor="#0A2647">
+        <Frame Margin="10,0,10,0" 
+               VerticalOptions="Center"
+               BackgroundColor="AliceBlue">
+            <VerticalStackLayout Spacing="30"
+                             VerticalOptions="Center">
+                <Label Text="Color Marker"
+                       TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"/>
+                <Label Text="Red : "
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="Large"/>
+
+                <Slider x:Name="sliderRed"
+                    ThumbColor="{StaticResource Primary}"
+                    MaximumTrackColor="{StaticResource Tertiary}"
+                    MinimumTrackColor="{StaticResource Secondary}"
+                    ValueChanged="sliderRed_ValueChanged"/>
+                <Label Text="Gren : "
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="Large"/>
+
+                <Slider x:Name="sliderGreen"
+                    ThumbColor="{StaticResource Primary}"
+                    MaximumTrackColor="{StaticResource Tertiary}"
+                    MinimumTrackColor="{StaticResource Secondary}" 
+                    ValueChanged="sliderRed_ValueChanged"/>
+                <Label Text="Blue : "
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="Large"/> 
+
+                <Slider x:Name="sliderBlue"
+                    ThumbColor="{StaticResource Primary}"
+                    MaximumTrackColor="{StaticResource Tertiary}"
+                    MinimumTrackColor="{StaticResource Secondary}" 
+                    ValueChanged="sliderRed_ValueChanged"/>
+                <Frame CornerRadius="25"
+                       HorizontalOptions="Center"
+                       BackgroundColor="AliceBlue">
+                    <HorizontalStackLayout>
+                        <Label x:Name="lblHex"
+                               HorizontalTextAlignment="Center"
+                               Text="HEX Value: #000000"
+                               TextColor="Black"
+                               VerticalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Medium"/>
+                        <ImageButton Margin="10,0,0,0"
+                                     HeightRequest="50"
+                                     Source="aziz_vefa.jpg"
+                                     VerticalOptions="Center"
+                                     WidthRequest="50"
+                                     CornerRadius="25"
+                                     Clicked="ImageButton_Clicked"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button x:Name="btnRandom"
+                        Clicked="btnRandom_Clicked"
+                        TextColor="White"
+                        BackgroundColor="{StaticResource Primary}"
+                        Text="Generate Random Color"
+                        HeightRequest="50"
+                        FontAttributes="Bold"
+                        FontSize="Medium"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
